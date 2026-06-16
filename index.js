@@ -6,7 +6,9 @@ const todoRouter = require('./routers/todos');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const ALLOWED_ORIGINS = (process.env.FRONTEND_ORIGINS || 'http://localhost:3000')
+const DEFAULT_ORIGINS =
+  'http://localhost:3000,https://vibe-todo-frontend-omega-rosy.vercel.app';
+const ALLOWED_ORIGINS = (process.env.FRONTEND_ORIGINS || DEFAULT_ORIGINS)
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
